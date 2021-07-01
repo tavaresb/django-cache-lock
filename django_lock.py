@@ -304,7 +304,8 @@ def get_lock_cls(client):
     elif issubclass(backend_cls, BaseMemcachedCache):
         cls = MemcachedLock
     elif issubclass(backend_cls, BaseDatabaseCache):
-        raise NotImplementedError("We don't support database cache yet")
+        #raise NotImplementedError("We don't support database cache yet")
+        cls = Lock
     else:
         cls = Lock
     return cls
